@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <title>Internship tutor</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <!-- bootstrap-css -->
+        <link rel="stylesheet" href="Template/css/bootstrap.min.css" >
+        <!-- //bootstrap-css -->
+        <!-- Custom CSS -->
+        <link href="Template/css/style.css" rel='stylesheet' type='text/css' />
+        <link href="Template/css/style-responsive.css" rel="stylesheet"/>
+        <!-- font CSS -->
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <!-- font-awesome icons -->
+        <link rel="stylesheet" href="Template/css/font.css" type="text/css"/>
+        <link href="Template/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/bootstrap.css" type="text/css">
+        <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css">
+        <link rel="stylesheet" href="../css/font-awesome.css" type="text/css"/>
+        <link rel="stylesheet" href="../css/font-awesome.css" type="text/css">
+            
+            
+            
+            
+        <!-- //font-awesome icons -->
+        <script src="Template/js/jquery2.0.3.min.js"></script>
+    </head>
+    <body>
+        <section id="main-content">
+            <section class="wrapper">
+                <form>
+                    <div class="reg-w3 mt-1">
+                        <div class="col-md-12">
+                            <div class="">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div >
+                                            <div class="col-xs-12 col-md-6 col-md-offset-3 mt-3">
+                                                <div class="input-group input-group-lg">
+                                                    <input type="text" class="form-control "  name="search"    value="Cerca" onfocus="this.value='';"   />
+                                                    <div class="input-group-btn">
+                                                        <button type="submit" class="btn btn-default" tabindex="-1"><i class="fa fa-search glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--/.row-->
+                        
+                    <div  class="reg-w3 mt-2">
+                        <div class="col-md-12">
+                            
+                            <#list annunci>
+                                
+                            <div style="background-color:#fff0f5;" class="panel panel-default">
+                                <div class="panel-body">
+                                    <#items as annuncio>
+                                        
+                                    <div class="search-result-item col-md-12">
+                                        <hr  width=100% size=50 color="black">
+                                        <div class="search-result-item-body col-sm-12 mt-1">
+                                            <div class="reg-w3">
+                                                <div class="col-sm-12">
+                                                    <h3 class="search-result-title"><a href="login">${annuncio.titolo}</a></h3>
+                                                    <p class="text-muted">${annuncio.settore}</p>
+                                                    <p>${annuncio.corpo}</p>
+                                                    <br>
+                                                    <h4>Periodo</h4>
+                                                    <p>${annuncio.dataAvvio} al ${annuncio.dataTermine}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--/.search-result-item-->
+                                    </#items>
+                                </div>
+                            </div>
+                            <#if (count==0)>
+                            <#else>
+                                
+                                
+                            <div class="text-center">
+                                <div class="btn-group">
+                                    <button class="${removeLeft!} btn btn-default" name="page" value="${page-1}"> <span class="fa fa-arrow-left"></span></button>
+                                    <#list 0..count-1 as i>
+                                    <#if i == page>
+                                    <button  class="active btn btn-default" name="page" value="${i}">${i+1}</button>
+                                    <#else>
+                                    <button  class="btn btn-default" name="page" value="${i}">${i+1}</button>
+                                    </#if>
+                                        
+                                    </#list>
+                                    <button  class=" ${removeRight!} btn btn-default" name="page" value="${page+1}"> <span class="fa fa-arrow-right"></span></button>
+                                </div>
+                            </div>
+                            </#if>
+                            <#else>
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                        <p>Nessun annuncio</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </#list>
+                        </div>
+                        <div class="col-sm-12 mt-3">
+                        </div>
+                    </div><!-- /.row -->
+                </form>
+            </section>
+        </section>
+    </body>
+</html>

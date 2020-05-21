@@ -1,0 +1,150 @@
+<section id="main-content">
+    <section class="wrapper"> 
+
+
+    <div class="reg-w3">
+        <div class="col-lg-12">
+            <h1 class="page-header">Resoconto</h1> 
+        </div>
+    </div><!--/.row-->
+
+    <#if alert??>
+    <div class="reg-w3 mt-1" id='hideMe'>
+        <div class="col-lg-12">
+            <div class="alert bg-success" role="alert"><em class="fa fa-lg fa-angle-right">&nbsp;</em>${alert}</div>
+        </div>
+    </div>
+    </#if>
+
+    <div class="reg-w3 mt-1"><!--AZIENDE REGISTRATE -->
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Aziende registrate</div>
+                <div class="panel-body btn-margins">
+                    <div class="col-md-12">
+                        <#list aziendeRegistrate>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Ragione Sociale</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <#items as azienda>
+                                <tr>
+                                    <td>${azienda?index+1}</td>
+                                    <td>${azienda.getRagioneSociale()}</td>
+                                    <td><a type="button" class="btn btn-sm btn-default" href="infoAzienda?action=registrata&refA=${azienda.id}">Apri</a></td>
+                                </tr>
+                                </#items>
+                            </tbody>
+                        </table>
+                        <#if (aziendeRegistrate?size>3)>
+                        <div class="text-center">
+                            <a type="button" class="btn btn-sm btn-link" href="">Visualizza tutti</a>
+                        </div>
+                        </#if>
+                        <#else>
+                        <div class="text-center">
+                            <p>NESSUNA RICHIESTA</p>
+                        </div>
+                         </#list>
+                    </div>         
+                </div>
+            </div><!-- /.panel-->
+        </div>
+    </div><!--/AZIENDE REGISTRATE -->
+    
+    <div class="reg-w3 mt-1"><!--AZIENDE APPROVATE -->
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Aziende approvate</div>
+                <div class="panel-body btn-margins">
+                    <div class="col-md-12 table-responsive">
+                        <#list aziendeApprovate>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Ragione Sociale</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <#items as azienda>
+                                <tr>
+                                    <td>${azienda?index+1}</td>
+                                    <td>${azienda.getRagioneSociale()}</td>
+                                     <form method="post" action="Upload" enctype="multipart/form-data">
+                                    <td>
+                                            <input name="filetoupload" type="file">
+                                            <input type="hidden" name="refA" value="${azienda.getId()}">
+                                    </td>
+                                    <td><input class="btn btn-default" value="Upload" type="submit"></td>
+                                    </form>
+                                </tr>
+                                </#items>
+                            </tbody>
+                        </table>
+                         <#if (aziendeApprovate?size>3)>
+                        <div class="text-center">
+                            <a type="button" class="btn btn-sm btn-link" href="">Visualizza tutti</a>
+                        </div>
+                         </#if>
+                        <#else>
+                        <div class="text-center">
+                            <p>NESSUNA AZIENDA DA CONVENZIONARE</p>
+                        </div>
+                         </#list>
+                    </div>         
+                </div>
+            </div><!-- /.panel-->
+        </div>
+    </div><!--/AZIENDE APPROVATE -->
+    
+    <div class="reg-w3 mt-1"><!--AZIENDE CONVENZIONATE -->
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Aziende convenzionate</div>
+                <div class="panel-body btn-margins">
+                    <div class="col-md-12">
+                        <#list aziendeConvenzionate>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Ragione Sociale</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <#items as azienda>
+                                <tr>
+                                    <td>${azienda?index+1}</td>
+                                    <td>${azienda.getRagioneSociale()}</td>
+                                    <td><a type="button" class="btn btn-sm btn-default" href="infoAzienda?action=convenzionata&refA=${azienda.id}">Apri</a></td>
+                                </tr>
+                                </#items>
+                            </tbody>
+                        </table>
+                        <#if (aziendeConvenzionate?size > 3)>
+                        
+                        <div class="text-center">
+                            <a type="button" class="btn btn-sm btn-link" href="">Visualizza tutti</a>
+                        </div>
+                        </#if>
+                        <#else>
+                        <div class="text-center">
+                             <p>NESSUNA AZIENDA CONVENZIONATA</p>
+                        </div>
+                         </#list>
+                    </div>         
+                </div>
+            </div><!-- /.panel-->
+        </div>
+    </div><!--/AZIENDE CONVENZIONATE -->
+    </section>
+</section>

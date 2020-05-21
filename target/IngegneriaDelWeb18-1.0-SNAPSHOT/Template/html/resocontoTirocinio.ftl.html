@@ -1,0 +1,30 @@
+<section id="main-content">
+    <section class="wrapper">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel w3layouts-glyphicon">
+                <div class="panel-heading mt-1">${titolo}</div>
+                <div class="panel-body">
+                    <form >
+                        <div class="mt-1" style="margin-bottom:10px;">
+                            <h5 style="margin-bottom:10px;">Ore svolte:</h5>
+                            <input type="number" class="form-control" required name="ore" placeholder="Inserisci valore...">
+                        </div>
+                        <div class="mt-1" style="margin-bottom:10px;">
+                            <h5 style="margin-bottom:10px;">Elenca le attivit&agrave; svolta dal tirocinante:</h5>
+                            <textarea class="form-control" style="resize: none" id="message" name="attivita" maxlength="255" required placeholder="Inserisci testo..." rows="5"></textarea>
+                        </div>
+                        <div class="mt-4" style="margin-bottom:10px;">
+                            <h5 style="margin-bottom:10px;">Risultato conseguito :</h5>
+                            <textarea class="form-control" style="resize: none" id="message" name="risultato" maxlength="255" required placeholder="Inserisci testo..." rows="5"></textarea>
+                        </div>
+                        <div class="col-md-4 col-lg-offset-4 mt-4 text-center" >
+                            <input  type="hidden" name="idA" value="${idAnnuncio}" />
+                            <input  type="hidden" name="idT" value="${idTirocinante}" />
+                            <button type="submit" class="btn btn-md btn-success" name="action" value="concludi">Concludi</button>
+                        </div>
+                    </form>
+                </div>
+            </div><!--/.panel--> 
+        </div><!--/.row--> 
+    </section>
+</section>

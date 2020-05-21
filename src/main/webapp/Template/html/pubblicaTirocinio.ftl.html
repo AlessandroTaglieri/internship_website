@@ -1,0 +1,84 @@
+<section id="main-content">
+    <section class="wrapper">
+        <!--/.row-->
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 mt-1">
+                <div class="panel w3layouts-glyphicon">
+                    <div class="panel-heading mt-1">Annuncio tirocinio</div>
+                    <br>
+                    <form class="cmxform form-horizontal" method="POST">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-12 mt-1" >
+                                <h5>Titolo:</h5>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" style="margin-bottom:10px;" name="titolo" value="Inserisci titolo..." onfocus="this.value='';"/>
+                        <div class="row">
+                            <div class="col-md-12 mt-1" style="margin-bottom:10px;">
+                                <h5>Informazioni:</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mt-1" style="margin-bottom:10px;">
+                                <input type="text" class="form-control" name="settore" value="Settore" onfocus="this.value='';" required/>
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <input type="text" class="form-control" name="modalita" value="Modalit&agrave;" onfocus="this.value='';" required/>
+                            </div>	          
+                        </div> 
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-6 mt-1">
+                                <input type="text" class="form-control" name="sussidio" value="Sussidio" onfocus="this.value='';" required/>
+                            </div>         
+                        </div> 
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-12 mt-1">
+                                <h5>Periodo:</h5>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-6 mt-1">
+                                <input value="Data inizio gg/mm/aaaa"  class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="dataInizio">
+                            </div>
+                            <div class="col-md-6 mt-1">
+                                <input value="Data termine gg/mm/aaaa"  class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="dataTermine">
+                            </div>	          
+                        </div>  
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col-md-12 mt-1">
+                                <h5>Descizione:</h5>
+                            </div>
+                        </div>
+                        <textarea class="form-control mt-1" style="margin-bottom:10px;" name="corpo" placeholder="Inserisci testo (Max 150 parole)" rows="5"></textarea>
+                        <h5 class="mt-3" style="margin-bottom:10px;">Referente Aziendale:</h5>
+                        <div class="row">
+                            <div class="col-xs-12 mt-1 col-md-6" style="margin-bottom:10px;">
+                                <input type="text" class="form-control" name="nomeRef" value="Nome" onfocus="this.value='';" required/>
+                            </div>
+                            <div class="col-xs-12 mt-1 col-md-6" style="margin-bottom:10px;">
+                                <input type="text" class="form-control" name="cognRef" value="Cognome" onfocus="this.value='';" required/>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control mt-1" style="margin-bottom:10px;" name="mailRef" value="Email" onfocus="this.value='';" required/>
+                        <input type="text" class="form-control mt-1" style="margin-bottom:10px;" name="telRef" value="Telefono (opzionale)" onfocus="this.value='';" required/>
+                        <h5 class="mt-4" style="margin-bottom:10px;">Docente di riferimento:</h5>
+                        <div class="row">
+                            <div class="col-md-6 mt-1" style="margin-bottom:10px;">
+                                <input type="text" class="form-control" name="nomeDoc" value="Nome" onfocus="this.value='';" required/>
+                            </div>
+                            <div class="col-md-6 mt-1" style="margin-bottom:10px;">
+                                <input type="text" class="form-control" name="cognDoc" value="Cognome" onfocus="this.value='';" required/>
+                            </div>	          
+                        </div>
+                        <input type="text" class="form-control mt-1" name="mailDoc" value="Email" onfocus="this.value='';" required/>
+                        <div class="w3layouts-glyphicon text-center">
+                            <input name="pubblica" type="submit" class="form-control btn-success" value="PUBBLICA TIROCINIO"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<!--/.row-->
+<!--/.main--> 

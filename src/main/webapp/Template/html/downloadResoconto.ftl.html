@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+
+<head>
+    <title>Progetto Formativo</title>
+
+    <style>
+
+        *{margin: 0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+        html{background-color: #525659; width: 70%; margin: auto;}
+        body{margin: 60px auto}
+        h4{font-size: 16px; margin: 8px 0}
+        p{font-size: 18px; font-weight: 500; margin: 10px 0}
+        li{font-weight: 500}
+        input{margin: 8px 0}
+        .page{padding: 30px 50px; margin-bottom: 30px; background-color: #ffffff; min-height: 1500px}
+        .center{text-align: center}
+        .thin{font-weight: 400}
+        .small{font-size: 14px; line-height: 1; margin: 0 0 8px 0}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="page">
+        <h2 class="center">UNIVERSITA&apos; DEGLI STUDI DELL&apos;AQUILA</h2>
+        <h4 class="center">DIPARTIMENTO DI INGEGNERIA E SCIENZE DELL&apos;INFORMAZIONE E MATEMATICA</h4>
+        <br />
+        <h3 class="center"><b>ALLEGATO 1</b></h3>
+        <h4>
+            <b>
+            alla Convenzione per lo svolgimento di attivit&agrave; di tirocinio e di orientamento (ai sensi dell&apos;art. 18 L.196/97 e dell&apos;Art.
+            1 Decreto Ministero del Lavoro e Previdenza Sociale N. 142/98 e della Legge 148 del 14/09/2011) per studenti, laureati e
+            diplomati del Dipartimento di Ingegneria, Scienze dell&apos;Informazione e Matematica dell&apos;Universit&agrave; degli Studi dell&apos;Aquila.
+            </b>
+        </h4>
+        <br />
+        <br />
+        <h3 class="center"><b>PROGETTO FORMATIVO E ORIENTAMENTO</b></h3>
+        <br />
+        <h4>Nominativo del tirocinante: ${studente.nome} ${studente.cognome} </h4>
+        <h4>Nato a ${studente.cittaNascita}   Prov. ${studente.provinciaNascita} il ${studente.dataNascita}</h4>
+        <h4>Residente in ${studente.cittaResidenza}  Prov ${studente.provinciaResidenza}</h4>
+        <h4>Telefono</h4>
+        <h4 class="center">Attuale condizione(barreare casella)</h4><br />
+        <input type="checkbox" checked />Studente corso di laurea in: ${studente.corsoLaurea}(${studente.laurea})<br />
+        <input type="checkbox" />Diplomato. Diploma universitario in:<br />
+        <input type="checkbox" />Laureato. Laurea in:<br />
+        <input type="checkbox" />Dottorato di ricerca in:<br />
+        <input type="checkbox" />Scuola o corso di perfezionamento o specializzazione in:<br /><br />
+        <h4 class="center">Barrare se si &egrave; portatori di handicap</h4><br />
+        <input type="checkbox" />${studente.handicap?string('Si', 'No')}<br /><br /><br /><br />
+        <h4>Ente o azienda ospitante ${azienda.ragioneSociale}</h4>
+        <h4>Luogo effettuazione tirocinio ${azienda.indirizzoSede}</h4>
+    </div>
+
+    <div class="page">
+        <h2 class="center">UNIVERSITA&apos; DEGLI STUDI DELL&apos;AQUILA</h2>
+        <h4 class="center">DIPARTIMENTO DI INGEGNERIA E SCIENZE DELL&apos;INFORMAZIONE E MATEMATICA</h4>
+        <br />
+        <h4>Attivi&agrave; dal ${tirocinio.dataInizio} al ${tirocinio.dataFine}</h4>
+        <h4>per il conseguimento di n. ${tirocinio.crediti} CFU</h4>
+        <h4>Tutore univesitario ${annuncio.getDocente().getNome()}</h4>
+        <h4 class="thin">Telefono ${azienda.telResponsabile}</h4>
+        <h4>Tutore aziendale ${annuncio.getReferente().getNome()} ${annuncio.getReferente().getCognome()}</h4>
+        <h4 class="thin">Telefono ${annuncio.getReferente().getTelefono()}</h4><br />
+        <h4 class="center">Polizze assicurative</h4><br />
+        <h4>Copertura assicurativa per rischio responsabilit&agrave; civile terzi:</h4>
+        <p class="small">
+            Compagnia assicurativa:<br />
+            UNIPOLSAI n.65 / 102965221<br />
+            Scadenza polizza: 30 aprile 2018<br />
+        </p>
+        <h4>Copertura assicurativa per rischio infortuni:</h4>
+        <p class="small">
+            Compagnia assicurativa:<br />
+            Copertura da polizza HARMONIE MUTUELLE n.100015<br />
+            Scadenza polizza: 30 aprile 2018 <br />
+        </p>
+        <h4>Posizione INAIL:</h4>
+        <p class="small">
+             Copertura assicurativa &apos;in conto Stato&apos; ex art. 2 D.P.R. N. 156 del 9.04.1999
+        </p><br />
+        <h4>Obiettivi tirocinio:</h4>
+		<h4 class="thin">${annuncio.corpo}</h4>
+        <h4>Modalit&agrave; tirocinio:</h4><br />
+		<h4 class="thin">${annuncio.modalita}</h4><br />
+        <h4>Facilitazioni previste: sussidio di formazione e servizi aziendali (mensa)</h4>
+        <h4>__________________________________________________________________________</h4>
+    </div>
+
+
+    <div class="page">
+        <h2 class="center">UNIVERSITA&apos; DEGLI STUDI DELL&apos;AQUILA</h2>
+        <h4 class="center">DIPARTIMENTO DI INGEGNERIA E SCIENZE DELL&apos;INFORMAZIONE E MATEMATICA</h4>
+        <br />
+
+        <h4>Obblighi del tirocinante</h4><br />
+        <ul>
+            <li>
+                 Seguire le indicazioni dei tutori e fare riferimento ad essi su qualsiasi esigenza di tipo organizzativo ed altre evenienze
+            </li>
+            <li>
+                 Rispettare gli obblighi di riservatezza per quanto attiene ai dati, informazioni e conoscenze in merito all&apos;attivit&agrave; di
+                ricerca dell&apos;Ente/Azienda, acquisiti durante e dopo lo svolgimento del tirocinio
+            </li>
+            <li>
+                 Rispettare i regolamenti aziendali e le norme in materia di igiene e sicurezza
+            </li>
+            <li>
+                 Inviare al Dipartimento di Ingegneria, Scienze dell’Informazione e Matematica dell&apos;Universit&agrave; degli Studi dell&apos;Aquila, mensilmente,
+                le presenze effettive presso l&apos;Azienda rilevate da una scheda che viene consegnata dall’Azienda stessa all&apos;atto della compilazione
+                del presente Progetto.
+            </li>
+        </ul><br />
+        <p style="font-size: 16px">
+             Ai sensi degli artt. 10 e seguenti della legge 675/ 96, sulla tutela delle persone e di altri soggetti rispetto al trattamento
+            dei dati personali, con la sottoscrizione il tirocinante esprime il suo consenso a che i suoi dati personali vengano comunicati
+            all&apos;Universit&agrave; limitatamente ai trattamenti connessi alle finalit&agrave; del presente rapporto di tirocinio. La sottoscrizione
+            del presente modello comporta anche il consenso del tirocinante al trattamento dei suoi dati personali nel senso sopraindicato.
+            L&apos;Aquila,
+        </p><br />
+
+        <h4>Firma del tirocinante</h4>
+        <p>${studente.nome} ${studente.cognome}</p><br />
+
+        <h4>L&apos;Ente/Azienda</h4>
+        <p>${azienda.ragioneSociale}</p><br />
+
+        <h4>Il Tutor aziendale</h4>
+        <p>_____________________________</p><br />
+
+        <h4>Il Direttore del Dipartimento di Ingegneria e Scienze dell’Informazione e Matematica. Prof. Guido Proietti</h4>
+        <p>Guido Proietti</p>
+    
+    </div>
+	
+    <div class="page">
+        <h2 class="center">UNIVERSITA&apos; DEGLI STUDI DELL&apos;AQUILA</h2>
+        <h4 class="center">DIPARTIMENTO DI INGEGNERIA E SCIENZE DELL&apos;INFORMAZIONE E MATEMATICA</h4>
+        <br />
+        <h4>Da campilare a cura dell&apos;azienda</h4><br /><br />
+        <h4>Ente/Azienda ${azienda.ragioneSociale}</h4>
+        <h4 class="thin">Codice Fiscale Ente/Azienda ${azienda.partitaIva}</h4><br />
+        <h4>Tirocinante</h4>
+        <h4>Cognome ${studente.cognome}  Nome ${studente.nome}</h4><br />
+        <h4>Periodo del tirocinio</h4>
+        <h4>dal <#if tirocinio.dataInizio?? && tirocinio.dataFine??>${annuncio.dataAvvio} al ${annuncio.dataTermine}</#if></h4>
+        <h4>Sede svolgimento del tirocinio ${azienda.indirizzoSede}</h4><br />
+        <h4>Data ${data?iso_local[0..9]}</h4>    
+        <h4>Firma tutore aziendale</h4>
+        <h4 class="thin">${annuncio.getDocente().getNome()} ${annuncio.getDocente().getCognome()}</h4>
+
+    </div>
+
+    <div class="page">
+        <h2 class="center">UNIVERSITA&apos; DEGLI STUDI DELL&apos;AQUILA</h2>
+        <h4 class="center">DIPARTIMENTO DI INGEGNERIA E SCIENZE DELL&apos;INFORMAZIONE E MATEMATICA</h4>
+        <br />
+        <h4>Da campilare a cura dell&apos;Universit&agrave;</h4><br /><br />
+        <h4 class="thin">Si attesta che</h4><br />
+        <h4>Tirocinante</h4><br />
+        <h4>Nome ${studente.nome} Cognome ${studente.cognome}</h4><br />
+        <h4 class="thin">Ha svolto il tirocinio ${annuncio.titolo}</h4><br />
+        <h4>Firma del tutore universitario</h4>
+        <h4 class="thin">${annuncio.getDocente().getNome()}</h4>
+        <h4>Firma del responsabile della struttura didattica competente</h4><br />
+        <h4 class="thin">Guido Proietti</h4>
+        <h4 class="thin">L&apos;Aquila li ${data?iso_local[0..9]}</h4>
+
+	    </div>
+</body>
+
+</html>
